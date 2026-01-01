@@ -1,0 +1,7 @@
+Everyday
+git pull origin main
+
+After changes do this Everyday
+git add .
+git commit -m "MESSAGE"
+git push
