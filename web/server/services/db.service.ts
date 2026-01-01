@@ -1,11 +1,16 @@
 import mongoose from "mongoose";
-let connection: mongoose.Connection | null = null;
+
+let isConnected = false;
 
 export async function getDB() {
-  if (!connection) {
-    await mongoose.connect(process.env.MONGO_URI!);
-    connection = mongoose.connection;
-    console.log("Connected to DB once.");
+  if (isConnected) return;
+
+  if (!process.env.MONGO_URI) {
+    throw new Error("MONGO_URI is not defined in environment variables.");
   }
-  return connection;
+
+  await mongoose.connect(process.env.MONGO_URI);
+  isConnected = true;
+
+  console.log("MongoDB connected");
 }
