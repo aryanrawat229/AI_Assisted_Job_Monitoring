@@ -3,3 +3,10 @@ SERVER
 - Whenever sent a API request pass the API_KEY in req.headers['x-api-key']
 - POST Bulk jobs api
 - GET Jobs bulk - IMPROVEMENT(pagination in API)
+- in create have check for same link jobs
+  - do not create a new entry update the same one.
+  - make the AI Data field empty
+- In create jobs schema add a field "ai_data" as json type field.
+  - PUT Api updates "ai_data"
+  - POST Api sets "ai_data"=undefined
+  - Frotend uses this ai_data to display data via AI.
