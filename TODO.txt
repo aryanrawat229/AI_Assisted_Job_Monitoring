@@ -1,0 +1,3 @@
+- Whenever sent a API request pass the API_KEY in req.headers['x-api-key']
+- POST Bulk jobs api
+- GET Jobs bulk - IMPROVEMENT(pagination in API)
